@@ -15,6 +15,8 @@ npm start
 
 ```
 
-## Comentarips
+## Comentarios
 
-Entender la lógica de Ionic la verdad no ha sido nada fácil. Como no se programar en Angular intenté usar React pero a pesar de ello no es exactamente igual a trabajar con Angular por lo que ciertos hints de de la documentación muestran resultados para Angular y no para React o Vue. Por otro lado, los iconos de Ionic no se muestran todos en React y desconozco el motivo, creo que para la próxima versión usaré otra librería.
+No pude generar el APK con Android Studio, la opción de Build Bundle no me salió, intentando desde la consola genera error en el build por  unknown option ‘–npm-client’ pero no conseguí solucionarlo.
+
+Por ahora sigo teniendo problemas con los iconos, además de los estilos que imponen los componentes de Ionic, por otro lado desconozco como hacer los componentes dinamicos de manera que si hago click en uno me abra un listado específico distinto a los demás, supongo que para esto igual necesito una store con datos. De cualquier manera entiendo mucho mejor el funcionamiento y siento que le he agarrado el rimo.

@@ -1,4 +1,4 @@
-import { IonPage, IonTitle, IonContent, IonGrid, IonRow, IonCol, IonHeader, IonToolbar } from '@ionic/react';
+import { IonPage, IonTitle, IonContent, IonGrid, IonRow, IonCol, IonHeader, IonToolbar, IonButtons, IonBackButton } from '@ionic/react';
 import ItemCard from '../components/ItemCard';
 import './ListDetails.css';
 
@@ -7,7 +7,10 @@ const ListDetails: React.FC = () => {
         <IonPage>
             <IonHeader>
                 <IonToolbar class="header-color">
-                    <IonTitle>Lista de compras</IonTitle>
+                    <IonButtons slot="start">
+                        <IonBackButton defaultHref="/"/>
+                    </IonButtons>
+                    <IonTitle>Lista de compras 1</IonTitle>
                 </IonToolbar>
             </IonHeader>
             <IonContent fullscreen>
