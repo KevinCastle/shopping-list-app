@@ -3,6 +3,7 @@ import ItemCard from '../components/ItemCard';
 import './ListDetails.css';
 
 const ListDetails: React.FC = () => {
+
     return (
         <IonPage>
             <IonHeader>

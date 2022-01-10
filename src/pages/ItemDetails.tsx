@@ -1,13 +1,40 @@
 import React, { useState } from 'react';
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonButtons, IonBackButton, IonImg, IonItemGroup, IonIcon, IonText, IonInput, IonLabel, IonItem, IonTextarea } from '@ionic/react';
 import './ItemDetails.css';
+import axios from 'axios';
 
 const Home: React.FC = () => {
 
+  const [image, setImage] = useState<string>();
   const [weight, setWeight] = useState<string>();
   const [location, setLocation] = useState<string>();
   const [number, setNumber] = useState<number>();
   const [note, setNote] = useState<string>();
+
+  React.useEffect(() => {
+    sendRequest().then(data => {
+      setImage(data.image_url);
+      setWeight(data.serving_size);
+      setLocation('Tottus');
+      setNumber(5);
+      setNote(data.categories);
+    });
+  }, []);
+
+
+
+  const sendRequest = () => {
+    return axios
+      .get('https://world.openfoodfacts.org/api/v0/product/737628064502.json', {
+        headers: {
+          'Content-Type': 'application/json'
+        },
+      })
+      .then((response) => {
+        console.log(response);
+        return response.data.product;
+      })
+  };
 
   return (
     <IonPage>
@@ -22,7 +49,7 @@ const Home: React.FC = () => {
       <IonContent fullscreen>
         <IonItemGroup class="item-container">
        <div text-center>
-          <IonImg class="item-image" src="https://via.placeholder.com/250" />
+          <IonImg class="item-image" src={image} />
        </div>
           <IonItemGroup style={{ padding: '10px' }}>
             <IonIcon name="person-circle-outline" />

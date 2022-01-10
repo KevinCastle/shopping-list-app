@@ -2,13 +2,17 @@ import { IonItemGroup, IonText, IonIcon } from '@ionic/react';
 import { Link } from "react-router-dom";
 import './List.css';
 
-const List: React.FC = () => {
+// @ts-ignore
+import uuid from 'react-uuid';
+
+const List: React.FC = (props) => {
+
     return (
 
         <IonItemGroup class="list-container">
             <IonIcon name="menu-outline" />
             <IonItemGroup>
-                <Link to="/list-details">
+                <Link to={`/list-details#${uuid()}`}>
                     <IonText>Nombre de lista</IonText>
                     <IonItemGroup style={{ padding: '10px' }}>
                         <IonIcon name="person-circle-outline"/>

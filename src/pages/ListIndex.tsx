@@ -3,6 +3,7 @@ import List from '../components/List';
 import './ListIndex.css';
 
 const ListIndex: React.FC = () => {
+
     return (
         <IonPage>
             <IonContent fullscreen>
