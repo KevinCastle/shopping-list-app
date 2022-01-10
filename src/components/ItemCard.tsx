@@ -15,8 +15,6 @@ const ItemCard: React.FC = () => {
         });
     }, []);
 
-
-
     const sendRequest = () => {
         return axios
             .get('https://world.openfoodfacts.org/api/v0/product/737628064502.json', {
@@ -31,7 +29,6 @@ const ItemCard: React.FC = () => {
 
     return (
         <Link to="/item-details">
-            <p>{item.image_url}</p>
             <IonItemGroup class="card-container">
                 <IonImg src={ item.image_url } />
                 <IonItemGroup style={{ padding: '10px' }}>
